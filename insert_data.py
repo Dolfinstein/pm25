@@ -26,13 +26,13 @@ print "初次使用"
 sqlstr_input = '''INSERT OR IGNORE INTO pm25 (Place, Date, PM25) VALUES (?,?,?)'''
 
 for dict in dicts:
-  site = dict.get("Site")
- 	date = dict.get("Date")
+  	site = dict.get("Site")
+	date = dict.get("Date")
  	pm25 = dict.get("PM2.5_Mass_Concentration")
-  project = (site, date, pm25)
-  print project
+ 	project = (site, date, pm25)
+  	print project
 
-  c.execute(sqlstr_input, project)
-  conn.commit()
+  	c.execute(sqlstr_input, project)
+  	conn.commit()
         
 conn.close()
